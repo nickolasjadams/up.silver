@@ -1,0 +1,19 @@
+extends partials/layout.pug
+block head
+	title Site Map | #{cu_name}
+block content
+	include partials/hero.pug
+	h1 Site Map
+	#sitemap.sitemap-container.basic-sitemap(style="clear: both; float: none;")
+		.sbox
+			.inside
+				ul.homelink
+					li.home
+						<a href="index.html">
+							<i class="fas fa-home"></i> Home
+						</a>
+						span.vline
+				ul.parents
+					<li><a href="rates.html">Rates</a></li>
+					<li><a href="contact.html">Contact</a></li>
+					<li class="last"><a href="about.html">About</a></li>

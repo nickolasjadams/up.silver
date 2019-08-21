@@ -1,0 +1,44 @@
+extends partials/layout.pug
+block head
+	title=cu_name
+block content
+	.home-wrapper
+		.owl-carousel.ma-slider(style="background: #222")
+			.fullSlide.d-block.w-100(style="background: url('images/ma/home.jpg');  background-position: center; background-size: cover;")
+				.slideIn
+					.slideHeading Pay confidently
+					.slideDetails with VISA + Apple Pay or Samsung Pay or Google Pay.  <br>Quick and easy to set up so you can start using it right away
+					a.featured-btn(href="au_contact.html") Get Started
+
+		.fr-wrapper-wrapper
+			.fr-slider-wrapper#frates
+				.fr-slider.max
+					.item(data-merge="3")
+						.ii-wrapper
+							.item-item
+								a.fr-block(href="https://www.loanliner.com/LoanRequest/Presenter/LoanList/02906720/2118?isframed=F&cuid=02906720&loanlistid=2118&channelid=6809350616132025428&locationid=NONE")
+									.fr-content
+										.title Autos
+										.aslowas as low as
+										.percent 2.99%
+										.acronym APR*
+										.featured-btn-no-animation.no-btn apply online now
+
+							.item-item
+								a.fr-block(href="https://www.loanliner.com/LoanRequest/Presenter/LoanList/02906720/2118?isframed=F&cuid=02906720&loanlistid=2118&channelid=6809350616132025428&locationid=NONE")
+									.fr-content 
+										.title Home Equity
+										.aslowas as low as
+										.percent 6.625%
+										.acronym APR*
+										.featured-btn-no-animation.no-btn apply online now
+
+block scripts
+	script(src="js/owl.carousel.min.js")
+	script.
+		$('.ma-slider').owlCarousel({
+			items:1,
+			mouseDrag:false
+
+		})
+		var d = new Date();

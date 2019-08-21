@@ -1,0 +1,141 @@
+extends partials/layout.pug
+block content
+	<div class="ma-slider" style="background: #222;">
+		<div class="fullSlide d-block w-100" style="background: url('images/heros/services.jpg');  background-position: center; background-size: cover;">
+			<div class="slideIn">
+				<div class="slideHeading">SERVICES</div>
+				<div class="slideDetails">THAT MAKE YOUR LIFE EASIER</div>
+			</div>	
+		</div>
+	</div>
+
+	.h1 SERVICES
+		+btn('#', 'Contact', 'Us', 'right')
+	.flex-content-wrapper(style="margin-bottom: 30px;")
+		.flex-content.first
+			img(src="images/assets/phone.png", alt="")
+		.flex-content.second
+			p(style="font-size: 24px;") Your life is busy. That’s why we oer many free services to help you manage your money on-the-go.
+
+	.outer-wrapper.light-grey
+		.flxwrapper.icons-column(style="margin-bottom: 0;")
+			.innerwrap
+				.inside
+					.sec_title.flex-wrapper(style="width: 100%; justify-content: center;")
+						span ONLINE & MOBILE BANKING
+						+btn('#', 'Enroll', 'Now', '', 'no-margin oneoff-button')
+
+					.whitespace-wrapper.u.flex-wrapper
+						.first 
+							p(style="font-size: 20px; 'Open Sans', sans-serif !important;") Mobile devices are for more than just taking selfies! Mobile banking is a free service to all of our members, and allows you access to your account 24/7.
+						.second 
+							img(src="images/assets/selfie.png", alt="")
+					.flxcols
+						.flx-ico.five
+							.icon-img 
+								img(src="images/s-icon1.png" alt="")
+							.icon-title
+								span Conduct banking transactions from your mobile devices.
+
+						.flx-ico.five
+							.icon-img 
+								img(src="images/s-icon2.png" alt="")
+							.icon-title
+								span Make loan or Visa payments online
+
+						.flx-ico.five
+							.icon-img 
+								img(src="images/s-icon3.png" alt="")
+							.icon-title
+								span View or print transaction history
+
+						.flx-ico.five
+							.icon-img 
+								img(src="images/s-icon4.png" alt="")
+							.icon-title
+								span Set up automatic transfers between your accounts
+						.flx-ico.five
+							.icon-img 
+								img(src="images/s-icon5.png" alt="")
+							.icon-title
+								span On-the-go check deposits with remote deposit capture
+
+	.h2(style="text-align: left; padding-top: 40px;") SERVICES
+	.flex-content-wrapper.whitespace-wrapper(style="margin-bottom: 30px; flex-flow: row-reverse;")
+		.flex-content.first
+			img(src="images/assets/computer.png", alt="")
+		.flex-content.second
+			p(style="font-size: 24px;") Two hours a month - that is the average time people spend paying bills, writing checks, addressing envelope, finding stamps and mailing. Now you can pay your bills in minutes with our Online Bill Pay service, and give yourself more time to do what you want to do.
+	.flex-content-wrapper(style="margin-bottom: 30px;")
+		.flex-content.u.first
+			ul
+				li Know when all your payments will clear (you set the payment dates)
+				li Have all your payment records in one place; know at a glance what you've paid (and when)
+				li Make a payment from multiple PAFCU checking accounts
+				li Download information for your personal accounting software.
+		.flex-content.u.second
+			+btn('Enroll', 'Now')
+	
+	.outer-wrapper.light-grey
+		.flxwrapper
+			.h2 FREE ONLINE SERVICES
+			.flxcols
+				.flxbox.red 
+					.flx-inner
+						.flxtitle(style="font-size: 1.5em;") CARD VALET
+						.flx-content(style="background: #fff;")
+							.flx-arrow 
+							.flx-text(style="text-align: center; min-height: 125px;") Protect your debit and credit cards through your mobile device by receiving alerts and dening when, where and how your payment cards are used.
+							.flx-text
+								+btn('#', 'Enroll')
+
+				.flxbox.grey 
+					.flx-inner
+						.flxtitle(style="font-size: 1.5em;") ESTATEMENTS
+						.flx-content(style="background: #fff;")
+							.flx-arrow 
+							.flx-text(style="text-align: center; min-height: 125px;") Save time, paper and money by having your statement delivered safely and conveniently right to your inbox.
+							.flx-text
+								+btn('#', 'Enroll')
+
+				.flxbox.teal 
+					.flx-inner
+						.flxtitle(style="font-size: 1.5em;") CALCULATORS
+						.flx-content(style="background: #fff;")
+							.flx-arrow 
+							.flx-text(style="text-align: center; min-height: 125px;") Calculate monthly payments, discover if you should refinance, if you should consolidate debt and more.
+							.flx-text
+								+btn('#', 'Learn', 'More')
+
+	.whitespace-wrapper(style="padding: 20px 0;")
+		.h2(style="text-align: left;") RESOURCES
+
+		.infodiv 
+			.flexwrap 
+				.el.titlediv.grey
+					.title INSURANCE <br>OPTIONS
+				.el.text 
+					.wrap 
+						p We’ve partnered with TruStage Insurance to give you aordable options for Auto, Home and Life Insurance. 
+				.el.icondiv.a-middle
+					+btn('#', 'Learn', 'More', 'right')
+
+		.infodiv 
+			.flexwrap 
+				.el.titlediv.teal
+					.title STUDENT <br>LOANS
+				.el.text 
+					.wrap 
+						p Through our partnership with Sallie Mae, you can Choose the student loan that’s right for you. Whether you’re an undergraduate, graduate, or parent— we have options to meet your specic needs
+				.el.icondiv.a-middle
+					+btn('#', 'Learn', 'More', 'right')
+
+		.infodiv 
+			.flexwrap 
+				.el.titlediv.yellow
+					.title TICKETS <br>AT WORK
+				.el.text 
+					.wrap 
+						p Now you’ll have access to exclusive savings on movie tickets, theme parks, hotels, tours, Broadway and Vegas shows & more. Be sure to visit often as new products and discounts are constantly
+				.el.icondiv.a-middle
+					+btn('#', 'Learn', 'More', 'right')

@@ -1,0 +1,25 @@
+ul.skip-nav
+	li
+		a(href='#content') Skip to Main Content
+
+#overlay
+
+
+header
+	.header-inner.max
+		.logo-wrapper
+			a(href="https://www.homecu.net")
+				img(src=logo_path, alt=cu_name+" Logo", class="logo")
+		.button-wrapper
+			nav#nav
+				a(href="rates.html") Rates
+				a(href="contact.html") Contact
+				a(href="about.html") About
+			button.hb(data-toggle="modal", data-target="#hbLogin")
+				i.fa.fa-lock
+					span.sr-only #{db_identity}
+			button.h-btn#navBtn
+				span.sr-only Navigation Menu
+				span.bar.t
+				span.bar.m
+				span.bar.b

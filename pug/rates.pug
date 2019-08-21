@@ -1,0 +1,55 @@
+extends partials/layout.pug
+block head
+	title Rates | #{cu_name}
+block content
+	include partials/hero.pug
+	h1 Rates
+	p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit doloremque doloribus, vitae iure porro magnam dolorum repellendus minus deleniti eum, quidem nobis vero cumque facilis, laboriosam in delectus illo atque.
+	
+	h2 Loan Rates
+	p Rates effective as of 8/18/2019. Rates subject to change without notice.
+	table.ratetable
+		tr
+			th Loan Type
+			th APR
+			th Term
+		tr
+			td New Auto Loan
+			td 2.50%
+			td 36 Months
+		tr
+			td 
+			td 2.55%
+			td 48 Months
+		tr
+			td 
+			td 2.65%
+			td 60 Months
+		tr
+			td Used Auto Loan
+			td 2.50%
+			td 36 Months
+		tr
+			td Motorcycle Loan
+			td 2.50%
+			td 36 Months
+		tr.hr
+			td RV Loan
+			td 2.50%
+			td 36 Months
+
+	h2 Savings Rates
+	p Rates effective as of 8/18/2019. Rates subject to change without notice.
+	table.ratetable
+		tr
+			th Account Type
+			th APY
+			th Dividend Rate
+		tr
+			td Savings
+			td 0.15%
+			td 0.15%
+		tr.hr
+			td Kids Savings Club
+			td 0.35%
+			td 0.35%

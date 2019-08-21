@@ -1,0 +1,9 @@
+// - var loanApplication = "https://www5.homecu.net/fi/pafcu/lnappfrm.html"
+
+mixin btn(url, firstLine, secondLine, floatOptional, addClass)
+	- var float = floatOptional || 'none'
+	- var addClass = addClass || ''
+	.btn-wrapper(class="f-" + float class=addClass)
+		a.btn(href=url)
+			span.smalltxt= firstLine
+			span.bigtxt= secondLine

@@ -1,0 +1,35 @@
+{
+	"package": "silver",
+	"server_number": 6,
+	"cu_name": "HomeCU",
+	"cu_code": "homecu",
+	"db_identity": "Digital Banking",
+	"db_login_type": "Account Number",
+	"db_mobile_entry": false,
+	"db_mobile_login_type": "",
+	"loan_app_url": "",
+	"enroll_url": "",
+	"forgot_pw_url": "",
+	"logo_path": "images/logo.png",
+	"phone": "(208) 384-1311",
+	"toll_free": "(877) 670-2984",
+	"automated_teller": "1-800-555-5555",
+	"fax": "(208) 345-4085",
+	"email": "info@homecu.com",
+	"lost_credit_card": "1-800-111-1112",
+	"lost_debit_card": "1-800-111-1113",
+	"lost_cards": "1-800-111-1114",
+	"address_line_1": "3040 Elder Street",
+	"address_line_2": "Boise, ID. 83705",
+	"tagline": "Digital Banking For Credit Unions",
+	"routing": "111111111",
+
+	"editables": {
+		"dot_files": {
+
+		},
+		"write_files": {
+
+		}
+	}
+}

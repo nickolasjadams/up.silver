@@ -1,0 +1,35 @@
+extends partials/layout.pug
+block head
+	title Contact #{cu_name}
+block content
+	include partials/hero.pug
+	h1 Contact
+	p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum maiores veritatis, cum, unde, doloribus atque ducimus commodi cupiditate iure dolor tempora provident hic quo quia. Tenetur similique sit, aperiam! Illum!
+	p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, quia est temporibus doloremque laboriosam aliquid repellat, eaque, ipsum nobis sapiente optio. Sed nostrum beatae possimus ipsam explicabo totam ratione quos?
+
+	h2 Hours
+	table.hours
+		tr
+			td Monday
+			td 8:00 - 5:30
+		tr
+			td Tuesday
+			td 8:00 - 5:30
+		tr
+			td Wednesday
+			td 8:00 - 5:30
+		tr
+			td Thursday
+			td 8:00 - 5:30
+		tr
+			td Friday
+			td 8:00 - 5:30
+		tr
+			td Saturday
+			td 9:00 - 2:00
+		tr
+			td Sunday
+			td Closed
+
+	.contact-form-wrapper
+		<iframe src="contact-form.html" frameborder="0" style="width: 100%; height: 700px;"></iframe>

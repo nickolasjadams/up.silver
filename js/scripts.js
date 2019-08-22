@@ -1,3 +1,79 @@
+// only dev server scripts
+
+if (window.location.href.includes('www0') || window.location.href.includes('jorgen')) {
+  var demo = true;
+  var query = window.location.href.split('?')[1];
+  var regionNumbers = ['r1','r2','r3','r4'];
+  var regionDescriptions = {
+    "r1": "Urban",
+    "r2": "Rural Mountainous",
+    "r3": "SouthWest",
+    "r4": "Coastal"
+  };
+
+  if (query === "help") {
+    console.log("Please Choose a region between 1 and " + regionNumbers.length);
+    console.table(regionDescriptions);
+  } else if (query) {
+    regionNumbers.forEach(function(r) {
+      if (query.includes(r)) {
+        window.location.pushState = window.location.href + "?" + r;
+        writeCookie(query);
+      }
+    })
+  } else if (document.cookie.includes("region") && !query) {
+    console.log('new page');
+    var query = document.cookie.split("=")[1];
+    console.log(query);
+    window.location.href = window.location.href + "?" + query;
+  }
+
+
+  if ($('.hero')) {
+    var heroPath = "images/demo/heros-" + query + "/";
+    var heroImages = [
+      "1.jpg",
+      "2.jpg",
+      "3.jpg",
+      "4.jpg",
+    ];
+    var heroPosition = [
+      "center center / cover",
+      "center center / cover",
+      "center center / cover",
+      "center center / cover"
+    ];
+    var r = Math.floor(Math.random() * heroImages.length);
+    if (heroImages.length > 0) {
+      $('.hero').css("background", "#111 url('"+heroPath+heroImages[r]+"') " + heroPosition[r]);
+    }
+  }
+
+
+}
+function writeCookie(query) {
+  document.cookie = "region=" + query;
+  
+}
+
+function checkCookieForRegionNumbers(rNumbers, returnAsBool) {
+  regionNumbers.forEach(function(r) {
+    if (document.cookie.includes(r)) {
+      if (returnAsBool == true) {
+        console.log(true)
+        return true;
+      } else {
+        console.log(r)
+        return r;
+      }
+    }
+  })
+}
+
+
+
+
+
 var date = new Date();
 var fYear = date.getFullYear();
 var Y = document.getElementById('Y');
@@ -8,7 +84,8 @@ if (Y) {
 // Random Images
 //   - add image to heroImages
 //   - add custom style heroPosition
-if ($('.hero')) {
+
+if ($('.hero') && !demo) {
   var heroPath = "images/heros/";
   var heroImages = [
     // "1.jpg",
@@ -17,7 +94,7 @@ if ($('.hero')) {
     // "4.jpg",
   ];
   var heroPosition = [
-    // "center top / cover",
+    // "center center / cover",
     // "center top / cover",
     // "center top / cover",
     // "center bottom / cover"
@@ -405,3 +482,9 @@ try {
   }
 } catch (err) {
 }
+
+
+
+
+
+

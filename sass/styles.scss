@@ -1,40 +1,23 @@
+@import "variables";
+@import "fonts";
 
-$primary: #79c142;
-$secondary: #21272f;
-$grey: #333;
 
-$sm: 576px;
-$md: 768px;
-$lg: 992px;
-$xl: 1200px;
 
-// Mixins
-@mixin sm { @media (min-width: $sm) { @content; } }
-  @mixin phone-landscape { @media (max-width: $md) and (orientation: landscape) { @content; } }
-  @mixin sm-landscape { @media (min-width: $sm) and (max-width: $md) and (orientation: landscape) { @content; } }
-@mixin md { @media (min-width: $md) { @content; } }
-@mixin lg { @media (min-width: $lg) { @content; } }
-@mixin xl { @media (min-width: $xl) { @content; } }
-@mixin xxl { @media (min-width: 1350px) { @content; } }
-@mixin lt($width) { @media (max-width: $width) { @content; } }
-@mixin gt($width) { @media (min-width: $width) { @content; } }
-@mixin between($width1, $width2) { @media (min-width: $width1) and (max-width: $width2) { @content; } }
 
-@mixin ie { @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { @content } }
-
-@mixin flex {
-  display: -webkit-box; 
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex; 
-  display: flex;
-}
 
 /* Reset */
 html, body, h1, h2, h3, h4, h5, h6, div, address { margin: 0; padding: 0; box-sizing: border-box; }
 body { 
   font-family: 'Raleway', sans-serif !important;
+  font-variant-numeric: lining-nums;
+  -moz-font-feature-settings:"lnum" 1; 
+  -moz-font-feature-settings:"lnum=1"; 
+  -ms-font-feature-settings:"lnum" 1; 
+  -o-font-feature-settings:"lnum" 1; 
+  -webkit-font-feature-settings:"lnum" 1; 
+  font-feature-settings:"lnum" 1;
 }
+
 /* Safari mobile phone links */
 a[href^=tel] { color: inherit; text-decoration: none; background: none; font-size: inherit; padding: 0; }
 
@@ -168,7 +151,6 @@ a {
 
 h1 {
   margin: 40px 0;
-  text-transform: uppercase;
 }
 h2 {
   margin: 40px 0 20px 0;
@@ -1529,11 +1511,10 @@ span.hb {
     width: 100%;
   }
   .copyrights {
-    @include xl {
       @include flex;
+      flex-flow: column;
       justify-content: flex-end;
       align-items: flex-end;
-    }
   }
   .row {
     @include xl {
@@ -1597,13 +1578,16 @@ button#navBtn {
 .hero {
   height: 50vh;
   width: 100vw;
-  background: #111 linear-gradient($primary, $secondary);
+  background: #111;
   margin-bottom: 80px;
 }
 .content-wrapper {
   padding: 0 55px;
   @include gt(1255px) {
     padding: 0;
+  }
+  p:last-child {
+    margin-bottom: 80px;
   }
 }
 
@@ -1819,32 +1803,208 @@ button#navBtn {
   }
 }
 
-@charset "UTF-8";
-@font-face {
-    font-family: 'Homecu Awesome';
-    src: url('fonts/Hcu.eot');
-    src: url('fonts/Hcu.eot?#iefix') format('embedded-opentype'),
-         url('fonts/Hcu.woff') format('woff'),
-         url('fonts/Hcu.ttf') format('truetype'),
-         url('fonts/Hcu.svg#homecu-awesome') format('svg');
-    font-weight: normal;
-    font-style: normal;
+
+.hb-box {
+  background: #89b54e;
+  width: 325px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 10px 0;
 }
 
-[class^="hcu-"]:before,
-[class*='hcu-']:before {
-    display: inline-block;
-    font-family: 'Homecu Awesome';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    position: relative;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #59b915 !important;
+.hb-wrapper {
+  width: 300px;
+  margin: 0 auto;
 }
-.hcu-homecu:before{content:'\0041';}
-.hcu-ncua:before{content:'\0042';}
-.hcu-ehl-text:before{content:'\0043';}
-.hcu-ehl:before{content:'\0044';}
-.hcu-bbb:before{content:'\0045';}
+
+.hb-title {
+  margin: 0 0 10px 0;
+  color: #000;
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: normal;
+}
+
+.hb-i {
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  padding: 0 5px 5px 5px;
+  font-kerning: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-variant: all-small-caps;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.hb-b {
+  width: 100%;
+  border: 0;
+  border-radius: 25px;
+  padding: 0 5px 5px 5px;
+  text-align: center;
+  font-size: 1.6rem;
+  font-variant: all-small-caps;
+  background: #fff;
+  color: #222;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.33);
+  margin: 10px 0;
+  letter-spacing: 2px;
+}
+
+.hb-links {
+  margin: 0 auto;
+  width: 300px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-around;
+}
+
+.hb-links a {
+  color: #000;
+}
+
+.hb-links a:hover, .hb-links a:focus {
+  color: #2D521E;
+}
+
+#hbLogin .modal-content {
+  border: 0;
+  border-radius: 0;
+}
+#hbLogin .modal-dialog {
+  top: calc(50vh - 200px);
+}
+#hbLogin .modal-header {
+  border: 0;
+}
+#hbLogin .modal-title {
+  font-size: 1.5em;
+  width: 100%;
+  text-align: center;
+}
+#hbLogin .featured-btn-no-animation, #hbLogin input[type="submit"] {
+  font-size: 1.75em;
+  color: #fff;
+  background: $secondary;
+  border-radius: 25px;
+  padding: 0 5px 5px 5px;
+  text-transform: capitalize;
+  text-decoration: none;
+  width: 100%;
+  cursor: pointer;
+}
+#hbLogin .close {
+    position: absolute;
+    top: 17px;
+    right: 17px;
+}
+#hbLogin .featured-btn-no-animation:hover, #hbLogin input[type="submit"]:hover {
+  color: #fff;
+  background: $primary;
+}
+#hbLogin .hbinput {
+  width: 75%;
+  padding: 10px 15px;
+  border: 0;
+  border-bottom: 2px solid #222;
+}
+@media (min-width: 576px) {
+  #hbLogin .hbinput {
+    width: 80%;
+  }
+}
+#hbLogin .hbinput:hover, #hbLogin .hbinput:focus {
+  border-bottom: 2px solid $primary;
+}
+#hbLogin .hblinks {
+  text-align: center;
+  padding-top: 20px;
+}
+#hbLogin .hblinks a {
+  color: #222;
+}
+#hbLogin .hblinks a:hover {
+  text-decoration: none;
+  color: $primary;
+}
+
+  #hbLogin .hblinks a {
+    display: inline-block;
+  }
+  #hbLogin .hblinks a:last-child:after {
+    content: '';
+  }
+
+.modal-header .close {
+    margin-left: 0 !important;
+}
+.modal-backdrop {
+  z-index: 190;
+}
+
+.modal-header, .modal-body, .modal-content, .modal-footer {
+  background: #fff !important;
+  color: #222;
+}
+.app-body {
+  padding: 0;
+}
+.apps-wrapper {
+  display: flex;
+  width: 100%;
+}
+.app {
+  display: flex;
+  width: 50%;
+  background: $secondary;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.app:hover {
+  background: $primary;
+  color: #fff !important;
+}
+/* Exit Pop Modal Styles */
+#modal {
+  display: none;
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  margin-left: -37.5%;
+  width: 75%;
+  box-shadow: 0px 2px 25px -8px black;
+  z-index: 2000;
+  padding: 10px 20px;
+  background: #fff url("../images/feedback.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
+#modal.active {
+  display: block !important;
+}
+
+#closeModal {
+  float: right;
+  cursor: pointer;
+  padding: 5px 12px;
+  font-size: 1.5em;
+}
+
+#modal td, #modal p {
+  font-size: 1.25em;
+}
+
+#modal textarea, #modal input, #modal button {
+  width: 300px;
+  font-size: 1.25em;
+}

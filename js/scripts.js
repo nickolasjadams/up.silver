@@ -23,7 +23,8 @@ if (window.location.href.includes('www0') || window.location.href.includes('jorg
       }
     })
   } else if (document.cookie.includes("region") && !query) {
-    var query = document.cookie.split("=")[1];
+    var query = document.cookie.split("region=")[1];
+        query = query.split(";")[0];
     console.log(query);
     window.location.href = window.location.href + "?" + query;
   }

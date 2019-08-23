@@ -9,7 +9,7 @@ header
 	.header-inner.max
 		.logo-wrapper
 			a(href="https://www.homecu.net")
-				img(src=logo_path, alt=cu_name+" Logo", class="logo")
+				img.logo(src=logo_path, alt=cu_name+" Logo")
 		.button-wrapper
 			nav#nav
 				a(href="rates.html") Rates
@@ -24,43 +24,44 @@ header
 				span.bar.m
 				span.bar.b
 
-<div class="modal fade" id="hbLogin" tabindex="-1" role="dialog" aria-labelledby="hbLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<div class="modal-title" id="hbLabel">Online Account Access</div>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+.modal.fade#hbLogin(tabindex="-1", role="dialog", aria-labelledby="hbLabel", aria-hidden="true")
+	.modal-dialog(role="document")
+		.modal-content
+			.modal-header
+				.modal-title#hbLabel Online Account Access
+				button.close(type="button", data-dismiss="modal", aria-label="Close")
 					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<div class="modal-content">
-					<div class="hb-wrapper">
-						<form NAME="login" ACTION="https://www6.homecu.net/hculive7/hcuLogin?cu=ZELLCO" METHOD="post">
-							<input type="hidden" name="cu" value="ZELLCO">
+			.modal-body
+				.modal-content
+					.hb-wrapper
+						//- https://my.homecu.net/banking/hcuLogin.prg?cu=SCU
+						if server === "my" && uses_homecu_banking
+							- var formAction = "https://" + server + ".homecu.net/banking/hcuLogin.prg?cu=" + cu_code.toUpperCase()
+						else if uses_homecu_banking
+							- var formAction = "https://www" + server + ".homecu.net/hculive7/hcuLogin?cu=" + cu_code.toUpperCase()
+
+						<form NAME="login" ACTION=#{formAction} METHOD="post">
+							<input type="hidden" name="cu" value="#{cu_code.toUpperCase()}">
 							<input type="hidden" name="btnLogin" value="login">
 
 							<input name="username" type="text" class="hb-b" size="8" maxlength="50" aria-label="Account Number" placeholder="Account Number">
 							<input class="hb-b" type="submit" name="imageField" src="images/hbl_btn.gif" alt="Login" value="Login">
 
-							<div class="hblinks">
-								<a href="https://www6.homecu.net/hculive7/hcuActivate?cu=ZELLCO&">Enroll Now</a>
-								<a href="https://www6.homecu.net/hculive7/hcuResetPwd?cu=ZELLCO">Forgot Password</a>
-							</div>
+							.hblinks
+								if server === "my" && uses_homecu_banking
+									<a href="https://#{server}.homecu.net/banking/hcuActivate.prg?cu=#{cu_code.toUpperCase()}">Enroll Now</a>
+									<a href="https://#{server}.homecu.net/banking/hcuResetPwd.prg?cu=#{cu_code.toUpperCase()}">Forgot Password</a>
+								else if uses_homecu_banking
+									<a href="https://www#{server}.homecu.net/hculive7/hcuActivate?cu=#{cu_code.toUpperCase()}&">Enroll Now</a>
+									<a href="https://www#{server}.homecu.net/hculive7/hcuResetPwd?cu=#{cu_code.toUpperCase()}">Forgot Password</a>
 						</form>
-					</div>
-				</div>
-			</div>
-			<div class="modal-body app-body">
-				<div class="modal-content">
-					<div class="apps-wrapper">
-						<a href="https://itunes.apple.com/us/app/zellco-fcu-mobile/id880159909?mt=8" onclick="show3rdPartyDisclosure(this.href, 'iTunes.Apple.com'); return false;" class="app"><i class="fab fa-apple"><span class="sr-only">Apple</span></i></a>
-						<a href="https://play.google.com/store/apps/details?id=com.homecu.zellco&hl=en" onclick="show3rdPartyDisclosure(this.href, 'Play.Google.com'); return false;" class="app"><i class="fab fa-android"><span class="sr-only">Android</span></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+			.modal-body.app-body
+				.modal-content
+					.apps-wrapper
+						if app_apple_url
+							a.app(href=app_apple_url, onclick="show3rdPartyDisclosure(this.href, 'iTunes.Apple.com'); return false;")
+								<i class="fab fa-apple"><span class="sr-only">Apple</span></i>
+						if app_android_url
+							a.app(href="https://play.google.com/store/apps/developer?id=HomeCU+LLC+-+Home+Banking+for+Credit+Unions&hl=en_US", onclick="show3rdPartyDisclosure(this.href, 'Play.Google.com'); return false;")
+								<i class="fab fa-android"><span class="sr-only">Android</span></i></a>
 
-</div>

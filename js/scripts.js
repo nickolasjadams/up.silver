@@ -3,6 +3,7 @@
 if (window.location.href.includes('www0') || window.location.href.includes('jorgen')) {
   var demo = true;
   var query = window.location.href.split('?')[1];
+      query = query.split("#")[0];
   var regionNumbers = ['r1','r2','r3','r4'];
   var regionDescriptions = {
     "r1": "Urban",
@@ -22,7 +23,6 @@ if (window.location.href.includes('www0') || window.location.href.includes('jorg
       }
     })
   } else if (document.cookie.includes("region") && !query) {
-    console.log('new page');
     var query = document.cookie.split("=")[1];
     console.log(query);
     window.location.href = window.location.href + "?" + query;
@@ -333,10 +333,10 @@ loanTypeArray.forEach(function(type) {
 
 function show3rdPartyDisclosure( link, title) {
 
-  var cuName = 'United Poles Federal Credit Union';
+  
 
   // ** Set the disclosure statement
-  var Disclosure_Statement = "<div align='center'><img class='img-fluid' src='images/logo.png' alt='" + cuName + " Logo'></div><br><ul><li>By continuing to this link, you will be leaving the " + cuName + ". <li>Links to other websites found on the " + cuName + " site are intended to provide assistance in locating information. " + cuName + " does not endorse, guarantee, or attest to the accuracy of any information provided by these other sites. <li>The credit union is not responsible for the content of these other sites and these sites are in no way operated by " + cuName + ". <li>The privacy and security policies of these linked sites may vary from those of the credit union; therefore, it is advised that you review the privacy information of each site visited.</ul>";
+  var Disclosure_Statement = "<div align='center'><img class='img-fluid' src='images/logo.png' alt='" + cu_name + " Logo'></div><br><ul><li>By continuing to this link, you will be leaving the " + cu_name + ". <li>Links to other websites found on the " + cu_name + " site are intended to provide assistance in locating information. " + cu_name + " does not endorse, guarantee, or attest to the accuracy of any information provided by these other sites. <li>The credit union is not responsible for the content of these other sites and these sites are in no way operated by " + cu_name + ". <li>The privacy and security policies of these linked sites may vary from those of the credit union; therefore, it is advised that you review the privacy information of each site visited.</ul>";
 
   if ($("#warning-modal").length === 0) {
 

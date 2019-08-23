@@ -3,7 +3,9 @@
 if (window.location.href.includes('www0') || window.location.href.includes('jorgen')) {
   var demo = true;
   var query = window.location.href.split('?')[1];
-      query = query.split("#")[0];
+      if (window.location.href.includes("#")) {
+        query = query.split("#")[0];
+      }
   var regionNumbers = ['r1','r2','r3','r4'];
   var regionDescriptions = {
     "r1": "Urban",
